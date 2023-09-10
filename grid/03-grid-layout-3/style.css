@@ -89,3 +89,63 @@
   font-size: 13px;
   font-weight: normal;
 }
+
+/* ANSWER */
+
+
+
+.container {
+  display: grid;
+  grid-template: auto auto 100% auto / 1fr 4fr;
+  gap: 4px;
+  
+  grid-template-areas: 
+    "head head"
+    "side nav"
+    "side article"
+    "foot foot";
+}
+
+.header {
+  grid-area: head;
+
+  display: grid;
+  grid-template: 1fr / 1fr 3fr;
+  justify-content: space-around;
+}
+
+.menu ul{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.menu ul{
+  list-style: none;
+}
+
+.sidebar{
+  grid-area: side;
+}
+
+.nav{
+  grid-area: nav;
+}
+
+.nav ul{
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.article{
+  grid-area: article;
+
+  display: grid;
+  gap: 15px;
+  grid-template: repeat(auto-fit, minmax(200px, 1fr)) /repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+}
+
+.footer{
+  grid-area: foot;
+}
